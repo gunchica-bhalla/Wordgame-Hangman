@@ -1,0 +1,9 @@
+<% if flash[:message] %>
+<p><%= flash[:message] %></p>
+<% end %>
+<%= form_with( url: game_create_path, local: true) do |form| %>
+<%= label_tag( :no_of_guesses, "Allowed number of wrong guesses:" ) %>
+<%= text_field_tag( :no_of_guess, nil, maxlength: 3 ) %>
+<%= submit_tag 'New Game' %>
+<% end %>
+
